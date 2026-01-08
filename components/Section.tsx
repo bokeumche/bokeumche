@@ -6,14 +6,17 @@ interface SectionProps {
   title: string;
   children: React.ReactNode;
   className?: string;
-  topPadding?: string; // 상단 여백 조절을 위한 prop 추가
+  topPadding?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ id, title, children, className = "", topPadding = "pt-24" }) => {
+const Section: React.FC<SectionProps> = ({ id, title, children, className = "", topPadding = "pt-20" }) => {
   return (
-    <section id={id} className={`pb-24 ${topPadding} px-6 max-w-screen-xl mx-auto ${className}`}>
-      <div className="flex flex-col mb-12">
-        <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900">{title}</h2>
+    <section id={id} className={`pb-20 ${topPadding} px-6 max-w-screen-xl mx-auto ${className}`}>
+      <div className="flex flex-col mb-16">
+        {/* 섹션 대제목: 폰트 위계는 유지하고 하단 밑줄 요소는 제거 */}
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter text-black">
+          {title}
+        </h2>
       </div>
       <div className="unclickable">
         {children}
