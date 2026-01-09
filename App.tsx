@@ -46,13 +46,13 @@ const App: React.FC = () => {
       {/* Hero Section */}
       <header id="home" className="h-[80vh] flex items-center justify-center relative overflow-hidden px-6 pt-20 unclickable">
         <div className="relative z-10 text-center w-full max-w-2xl flex flex-col items-center">
-          <h1 className="text-[64px] sm:text-8xl md:text-9xl font-bold tracking-tighter text-black mb-4">
+          <h1 className="text-[52px] sm:text-7xl md:text-8xl font-bold tracking-tighter text-black mb-4">
             채보금
           </h1>
-          <p className="text-[20px] sm:text-3xl font-normal text-zinc-700 tracking-tight mb-6">
+          <p className="text-[18px] sm:text-2xl font-normal text-zinc-700 tracking-tight mb-6">
             interactor | project-based roles
           </p>
-          <p className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-light max-w-[280px] sm:max-w-md mx-auto break-keep whitespace-normal">
+          <p className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-normal max-w-[280px] sm:max-w-md mx-auto break-keep whitespace-normal">
             프로젝트에 따라 다양한 역할을 수행하는 interactor 프리랜서입니다. 브랜드 기획·운영, 콘텐츠 기획, 상업 프로젝트, 타투 작업을 넘나들며 일합니다.
           </p>
           <div className="pt-8 opacity-10">
@@ -74,10 +74,10 @@ const App: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col text-left">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2 text-black tracking-tight leading-tight">
+                <h3 className="text-lg sm:text-xl font-normal mb-2 text-black tracking-tight leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-sm text-zinc-500 leading-relaxed font-light break-keep">
+                <p className="text-sm text-zinc-500 leading-relaxed font-normal break-keep">
                   {item.description}
                 </p>
               </div>
@@ -98,10 +98,10 @@ const App: React.FC = () => {
                   className="w-full h-full object-cover" 
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-black tracking-tight">
+              <h3 className="text-lg sm:text-xl font-normal mb-3 text-black tracking-tight">
                 {item.title}
               </h3>
-              <p className="text-sm text-zinc-500 leading-relaxed font-light">
+              <p className="text-sm text-zinc-500 leading-relaxed font-normal">
                 {item.description}
               </p>
             </div>
@@ -124,13 +124,13 @@ const App: React.FC = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[11px] tracking-[0.12em] text-zinc-400 mb-2 font-bold">
+                  <span className="text-[10px] tracking-[0.12em] text-zinc-400 mb-2 font-normal">
                     {item.subtitle}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-black tracking-tight leading-snug">
+                  <h3 className="text-lg sm:text-xl font-normal mb-4 text-black tracking-tight leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed font-light">
+                  <p className="text-sm text-zinc-500 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -157,7 +157,6 @@ const App: React.FC = () => {
 
       {/* Contact / Footer */}
       <footer id="contact" className="pb-32 pt-12 px-6 bg-white max-w-screen-xl mx-auto">
-        {/* Tattoo와 Contact 사이 세로선 데코레이션 - 간격 좁힘 */}
         <div className="pb-16 opacity-10">
           <div className="w-px h-24 bg-black mx-auto"></div>
         </div>
@@ -169,22 +168,22 @@ const App: React.FC = () => {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
           <div className="max-w-3xl w-full">
-            <h3 className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-light break-keep whitespace-normal mb-10">
+            <h3 className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-normal break-keep whitespace-normal mb-10">
               {CONTACT_INFO.headline}
             </h3>
             <div className="space-y-8">
               <div className="flex flex-col items-start">
-                <p className="text-zinc-400 text-[11px] font-bold uppercase tracking-[0.12em] mb-1">Email</p>
+                <p className="text-zinc-400 text-[10px] font-normal uppercase tracking-[0.12em] mb-1">Email</p>
                 <button 
                   onClick={handleCopyEmail}
-                  className="text-xl sm:text-2xl font-bold text-zinc-700 tracking-tight hover:text-black transition-colors text-left outline-none focus:outline-none"
+                  className="text-lg sm:text-xl font-normal text-zinc-700 tracking-tight hover:text-black transition-colors text-left outline-none focus:outline-none"
                   title="이메일 주소 복사하기"
                 >
                   {CONTACT_INFO.email}
                 </button>
               </div>
               <div className="flex flex-col items-start">
-                <p className="text-zinc-400 text-[11px] font-bold uppercase tracking-[0.12em] mb-1">Socials</p>
+                <p className="text-zinc-400 text-[10px] font-normal uppercase tracking-[0.12em] mb-1">Socials</p>
                 <div className="flex flex-wrap gap-x-12 gap-y-4">
                   {CONTACT_INFO.socials.map((social) => (
                     <a 
@@ -192,7 +191,7 @@ const App: React.FC = () => {
                       href={social.url} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xl sm:text-2xl font-bold text-zinc-700 tracking-tight hover:text-black transition-colors"
+                      className="text-lg sm:text-xl font-normal text-zinc-700 tracking-tight hover:text-black transition-colors"
                     >
                       {social.name}
                     </a>
@@ -201,7 +200,7 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="text-zinc-300 text-[10px] uppercase tracking-widest text-right w-full md:w-auto font-bold mt-20 md:mt-0 whitespace-nowrap">
+          <div className="text-zinc-300 text-[10px] uppercase tracking-widest text-right w-full md:w-auto font-normal mt-20 md:mt-0 whitespace-nowrap">
             {CONTACT_INFO.copyright}
           </div>
         </div>
