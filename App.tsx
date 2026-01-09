@@ -39,6 +39,21 @@ const App: React.FC = () => {
     document.body.removeChild(textArea);
   };
 
+  const renderSocialLabel = (name: string) => {
+    if (name.includes('(download)')) {
+      const parts = name.split('(download)');
+      return (
+        <>
+          {parts[0]}
+          <span className="text-zinc-300 group-hover:text-black transition-colors font-light">
+            (download)
+          </span>
+        </>
+      );
+    }
+    return name;
+  };
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-100 selection:text-black">
       <Navbar />
@@ -193,9 +208,9 @@ const App: React.FC = () => {
                       href={social.url} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lg sm:text-xl font-normal text-zinc-700 tracking-tight hover:text-black transition-colors"
+                      className="group text-lg sm:text-xl font-normal text-zinc-700 tracking-tight hover:text-black transition-all border-b border-zinc-200 hover:border-black pb-0.5"
                     >
-                      {social.name}
+                      {renderSocialLabel(social.name)}
                     </a>
                   ))}
                 </div>
