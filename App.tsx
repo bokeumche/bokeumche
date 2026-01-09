@@ -176,7 +176,8 @@ const App: React.FC = () => {
         </div>
         
         <div className="flex flex-col mb-2">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter text-black">
+          {/* Contact 제목도 다른 섹션 제목과 일관되게 조정 */}
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tighter text-black">
             Contact
           </h2>
         </div>

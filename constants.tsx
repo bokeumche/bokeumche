@@ -31,6 +31,18 @@ export const BRANDING_DATA: PortfolioItem[] = [
     description: '실험하고 변화하는 삶을 위하여 다양한 각도의 삶을 조명하는 콘텐츠 브랜드', 
     imageUrl: 'https://i.imgur.com/dfM7H8A.png' 
   },
+  { 
+    id: 5, 
+    title: '가이딩라이트', 
+    description: '동화 속 주인공의 다양성을 추구하며 재해석 아트워크를 생산하는 인클루시브 브랜드', 
+    imageUrl: 'https://i.imgur.com/whkMDe3.png' 
+  },
+  { 
+    id: 6, 
+    title: '아미퓨어', 
+    description: '화학 성분을 배제하고 수용성 아미노산과 다당류 원료를 사용하는 워리-프리 코스메틱 브랜드', 
+    imageUrl: 'https://i.imgur.com/ajetCjy.png' 
+  },
 ];
 
 export const PLANNING_DATA: PortfolioItem[] = [
