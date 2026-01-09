@@ -40,15 +40,12 @@ const App: React.FC = () => {
   };
 
   const renderSocialLabel = (name: string) => {
-    if (name.includes('(download)')) {
-      const parts = name.split('(download)');
+    if (name === 'click! (download)') {
       return (
-        <>
-          {parts[0]}
-          <span className="text-zinc-300 group-hover:text-black transition-colors font-light">
-            (download)
-          </span>
-        </>
+        <span className="text-lg sm:text-xl tracking-tight transition-colors">
+          <span className="font-normal text-zinc-700 group-hover:text-black">click! </span>
+          <span className="font-light text-zinc-200 group-hover:text-black">(download)</span>
+        </span>
       );
     }
     return name;
@@ -200,7 +197,7 @@ const App: React.FC = () => {
                 </button>
               </div>
               <div className="flex flex-col items-start">
-                <p className="text-zinc-400 text-[10px] font-normal uppercase tracking-[0.12em] mb-1">More</p>
+                <p className="text-zinc-400 text-[10px] font-normal uppercase tracking-[0.12em] mb-1">Portfolio</p>
                 <div className="flex flex-wrap gap-x-12 gap-y-4">
                   {CONTACT_INFO.socials.map((social) => (
                     <a 
@@ -208,7 +205,7 @@ const App: React.FC = () => {
                       href={social.url} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group text-lg sm:text-xl font-normal text-zinc-700 tracking-tight hover:text-black transition-all border-b border-zinc-200 hover:border-black pb-0.5"
+                      className="group transition-all border-b border-zinc-200 hover:border-black pb-0.5"
                     >
                       {renderSocialLabel(social.name)}
                     </a>
