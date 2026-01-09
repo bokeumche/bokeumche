@@ -45,15 +45,17 @@ const App: React.FC = () => {
 
       {/* Hero Section */}
       <header id="home" className="h-[80vh] flex items-center justify-center relative overflow-hidden px-6 pt-20 unclickable">
-        <div className="relative z-10 text-center w-full max-w-2xl flex flex-col items-center">
+        <div className="relative z-10 text-center w-full max-w-3xl flex flex-col items-center">
           <h1 className="text-[52px] sm:text-7xl md:text-8xl font-medium tracking-tighter text-black mb-4">
             채보금
           </h1>
           <p className="text-[18px] sm:text-2xl font-normal text-zinc-700 tracking-tight mb-6">
             interactor | project-based roles
           </p>
-          <p className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-normal max-w-[280px] sm:max-w-md mx-auto break-keep whitespace-normal">
-            프로젝트에 따라 다양한 역할을 수행하는 interactor 입니다. 프리랜서로 브랜드 기획·운영, 콘텐츠 기획, 상업 프로젝트, 타투 작업 등 경계를 넘나들며 일합니다.
+          <p className="text-zinc-500 text-[13px] sm:text-sm md:text-[17px] leading-relaxed md:leading-[1.8] font-normal max-w-[320px] sm:max-w-md md:max-w-none mx-auto break-keep whitespace-normal">
+            프로젝트에 따라 다양한 역할을 수행하는 interactor 입니다.<span className="hidden md:inline"><br /></span>
+            <span className="md:inline"> 프리랜서로 브랜드 기획·운영, 콘텐츠 기획, 상업 프로젝트, 타투 작업 등</span><span className="hidden md:inline"><br /></span>
+            <span className="md:inline"> 경계를 넘나들며 일합니다.</span>
           </p>
           <div className="pt-8 opacity-10">
             <div className="w-px h-24 bg-black mx-auto"></div>
@@ -65,7 +67,7 @@ const App: React.FC = () => {
       <Section id="branding" title="Branding" topPadding="pt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           {BRANDING_DATA.map((item) => (
-            <div key={item.id} className="flex items-start justify-start gap-8">
+            <div key={item.id} className="flex items-center justify-start gap-8">
               <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center bg-transparent overflow-hidden">
                 <img 
                   src={item.imageUrl} 
