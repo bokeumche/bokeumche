@@ -46,14 +46,14 @@ const App: React.FC = () => {
       {/* Hero Section */}
       <header id="home" className="h-[80vh] flex items-center justify-center relative overflow-hidden px-6 pt-20 unclickable">
         <div className="relative z-10 text-center w-full max-w-2xl flex flex-col items-center">
-          <h1 className="text-[52px] sm:text-7xl md:text-8xl font-bold tracking-tighter text-black mb-4">
+          <h1 className="text-[52px] sm:text-7xl md:text-8xl font-medium tracking-tighter text-black mb-4">
             채보금
           </h1>
           <p className="text-[18px] sm:text-2xl font-normal text-zinc-700 tracking-tight mb-6">
             interactor | project-based roles
           </p>
           <p className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-normal max-w-[280px] sm:max-w-md mx-auto break-keep whitespace-normal">
-            프로젝트에 따라 다양한 역할을 수행하는 interactor 프리랜서입니다. 브랜드 기획·운영, 콘텐츠 기획, 상업 프로젝트, 타투 작업을 넘나들며 일합니다.
+            프로젝트에 따라 다양한 역할을 수행하는 interactor 입니다. 프리랜서로 브랜드 기획·운영, 콘텐츠 기획, 상업 프로젝트, 타투 작업 등 경계를 넘나들며 일합니다.
           </p>
           <div className="pt-8 opacity-10">
             <div className="w-px h-24 bg-black mx-auto"></div>
@@ -74,7 +74,7 @@ const App: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col text-left">
-                <h3 className="text-lg sm:text-xl font-normal mb-2 text-black tracking-tight leading-tight">
+                <h3 className="text-lg sm:text-xl font-medium mb-1 text-black tracking-tight leading-tight">
                   {item.title}
                 </h3>
                 <p className="text-sm text-zinc-500 leading-relaxed font-normal break-keep">
@@ -98,7 +98,7 @@ const App: React.FC = () => {
                   className="w-full h-full object-cover" 
                 />
               </div>
-              <h3 className="text-lg sm:text-xl font-normal mb-3 text-black tracking-tight">
+              <h3 className="text-lg sm:text-xl font-medium mb-1 text-black tracking-tight">
                 {item.title}
               </h3>
               <p className="text-sm text-zinc-500 leading-relaxed font-normal">
@@ -127,7 +127,7 @@ const App: React.FC = () => {
                   <span className="text-[10px] tracking-[0.12em] text-zinc-400 mb-2 font-normal">
                     {item.subtitle}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-normal mb-4 text-black tracking-tight leading-snug">
+                  <h3 className="text-lg sm:text-xl font-medium mb-1 text-black tracking-tight leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-sm text-zinc-500 leading-relaxed font-normal">
@@ -161,14 +161,14 @@ const App: React.FC = () => {
           <div className="w-px h-24 bg-black mx-auto"></div>
         </div>
         
-        <div className="flex flex-col mb-4">
+        <div className="flex flex-col mb-2">
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter text-black">
             Contact
           </h2>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
           <div className="max-w-3xl w-full">
-            <h3 className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-normal break-keep whitespace-normal mb-10">
+            <h3 className="text-zinc-500 text-[13px] sm:text-sm md:text-base leading-relaxed font-normal break-keep whitespace-normal mb-8">
               {CONTACT_INFO.headline}
             </h3>
             <div className="space-y-8">
@@ -183,7 +183,7 @@ const App: React.FC = () => {
                 </button>
               </div>
               <div className="flex flex-col items-start">
-                <p className="text-zinc-400 text-[10px] font-normal uppercase tracking-[0.12em] mb-1">Socials</p>
+                <p className="text-zinc-400 text-[10px] font-normal uppercase tracking-[0.12em] mb-1">More</p>
                 <div className="flex flex-wrap gap-x-12 gap-y-4">
                   {CONTACT_INFO.socials.map((social) => (
                     <a 

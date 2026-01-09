@@ -57,7 +57,7 @@ export const TATTOO_DATA: TattooItem[] = [
 ];
 
 export const CONTACT_INFO = {
-  headline: "새로운 연결을 기다립니다.",
+  headline: "새로운 연결과 소통을 기다립니다.",
   email: "bokeumche@gmail.com",
   socials: [
     { name: "Instagram", url: "https://www.instagram.com/sasamoolmool" },
