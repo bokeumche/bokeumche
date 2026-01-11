@@ -1,11 +1,6 @@
 
 import { PortfolioItem, TattooItem } from './types';
 
-/**
- * [사진 교체 팁]
- * 1. 이미지가 포함된 웹페이지 주소가 아니라, '이미지 자체의 주소'를 넣어야 합니다.
- * 2. 이미지 위에서 마우스 오른쪽 버튼 클릭 -> '이미지 주소 복사'를 이용하세요.
- */
 export const BRANDING_DATA: PortfolioItem[] = [
   { 
     id: 1, 
@@ -40,7 +35,7 @@ export const BRANDING_DATA: PortfolioItem[] = [
   { 
     id: 6, 
     title: '아미퓨어', 
-    description: '화학 성분을 배제하고 수용성 아미노산과 다당류 원료를 사용하는 워리-프리 코스메틱 브랜드', 
+    description: '화학 성분 없이 수용성 아미노산과 다당류 원료를 사용한 워리프리 코스메틱 브랜드', 
     imageUrl: 'https://i.imgur.com/ajetCjy.png' 
   },
 ];
@@ -75,4 +70,35 @@ export const CONTACT_INFO = {
     { name: "click! (download)", url: "https://drive.google.com/file/d/1aOMdbj0tzjmP3ExSzoIRuXLWpefwdWJG/view?usp=sharing" }
   ],
   copyright: "© 2026 채보금. All rights reserved."
+};
+
+/**
+ * [간격 직접 수정하기]
+ * 단위는 Tailwind CSS 기준입니다 (예: 1 = 0.25rem = 4px)
+ */
+export const SPACING_CONFIG = {
+  branding: {
+    titleGap: 1,       // 섹션 제목 - 슬라이더 사이
+    imageToTextGap: 1,  // 이미지 - 설명 텍스트 사이
+    indicatorGap: 4     // 설명 텍스트 - 페이지 점(Dot) 사이
+  },
+  planning: {
+    titleGap: 6,       // 섹션 제목 - 첫 번째 아이템 사이
+    itemGap: 12,       // 아이템(그룹) 간의 상하 간격
+    imageToTitleGap: 4, // 이미지 - 소제목 사이
+    titleToDescGap: 1   // 소제목 - 설명글 사이
+  },
+  projects: {
+    titleGap: 6,       // 섹션 제목 - 첫 번째 아이템 사이
+    itemGap: 12,       // 아이템(그룹) 간의 상하 간격
+    imageToTitleGap: 4, // 이미지 - 소제목 사이
+    titleToDescGap: 1   // 소제목 - 설명글 사이
+  },
+  tattoo: {
+    titleGap: 6,       // 섹션 제목 - 이미지 그리드 사이
+    itemGap: 4         // 이미지들 사이의 좁은 간격
+  },
+  contact: {
+    titleGap: 2        // Contact 제목 - 본문 사이
+  }
 };
