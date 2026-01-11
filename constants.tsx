@@ -41,10 +41,52 @@ export const BRANDING_DATA: PortfolioItem[] = [
 ];
 
 export const PLANNING_DATA: PortfolioItem[] = [
-  { id: 1, title: '코리빙 브랜드 로컬스티치 〈오리지널스 통영〉', description: '전통 장인과 신진 창작자의 교류 프로그램 기획 및 운영', imageUrl: 'https://i.imgur.com/feGtkrZ.jpeg' },
-  { id: 2, title: '청년마을 브랜드 〈일간·주간·월간 괜찮아마을〉', description: '지역살이를 희망하는 청년을 위한 여행 프로그램 기획 및 운영', imageUrl: 'https://i.imgur.com/ZkoB89C.jpeg' },
-  { id: 3, title: 'KMI 지식경험 공유 컨퍼런스 〈갑자기 섬바다〉', description: '청년 창업가를 위한 6주 온라인 강연 기획 및 운영', imageUrl: 'https://i.imgur.com/I5oQT13.png' },
-  { id: 4, title: '식음료 팝업 스토어 〈오묵〉', description: '목포 어묵의 인지도 확대를 위한 팝업 공간 기획 및 운영', imageUrl: 'https://i.imgur.com/1wmkCut.jpeg' },
+  { 
+    id: 1, 
+    title: '코리빙 브랜드 로컬스티치 〈오리지널스 통영〉', 
+    description: '전통 장인과 신진 창작자의 교류 프로그램 기획 및 운영', 
+    imageUrl: 'https://i.imgur.com/feGtkrZ.jpeg',
+    imageUrls: [
+      'https://i.imgur.com/feGtkrZ.jpeg',
+      'https://i.imgur.com/tY3Uv2s.jpeg',
+      'https://i.imgur.com/9llRb8Q.jpeg',
+      'https://i.imgur.com/kxq2f0j.jpeg'
+    ]
+  },
+  { 
+    id: 2, 
+    title: '청년마을 브랜드 〈일간·주간·월간 괜찮아마을〉', 
+    description: '지역살이를 희망하는 청년을 위한 여행 프로그램 기획 및 운영', 
+    imageUrl: 'https://i.imgur.com/ZkoB89C.jpeg',
+    imageUrls: [
+      'https://i.imgur.com/ZkoB89C.jpeg',
+      'https://i.imgur.com/32ue0DZ.jpeg',
+      'https://i.imgur.com/3OQoU1F.jpeg',
+      'https://i.imgur.com/DM7FPIZ.jpeg'
+    ]
+  },
+  { 
+    id: 3, 
+    title: 'KMI 지식경험 공유 컨퍼런스 〈갑자기 섬바다〉', 
+    description: '청년 창업가를 위한 6주 온라인 강연 기획 및 운영', 
+    imageUrl: 'https://i.imgur.com/I5oQT13.png',
+    imageUrls: [
+      'https://i.imgur.com/I5oQT13.png',
+      'https://i.imgur.com/MXP10Eo.png'
+    ]
+  },
+  { 
+    id: 4, 
+    title: '식음료 팝업 스토어 〈오묵〉', 
+    description: '목포 어묵의 인지도 확대를 위한 팝업 공간 기획 및 운영', 
+    imageUrl: 'https://i.imgur.com/1wmkCut.jpeg',
+    imageUrls: [
+      'https://i.imgur.com/1wmkCut.jpeg',
+      'https://i.imgur.com/R8NvGIX.jpeg',
+      'https://i.imgur.com/N68z0aR.jpeg',
+      'https://i.imgur.com/37wCBMg.jpeg'
+    ]
+  },
 ];
 
 export const PROJECTS_DATA: PortfolioItem[] = [
@@ -72,33 +114,29 @@ export const CONTACT_INFO = {
   copyright: "© 2026 채보금. All rights reserved."
 };
 
-/**
- * [간격 직접 수정하기]
- * 단위는 Tailwind CSS 기준입니다 (예: 1 = 0.25rem = 4px)
- */
 export const SPACING_CONFIG = {
   branding: {
-    titleGap: 1,       // 섹션 제목 - 슬라이더 사이
-    imageToTextGap: 1,  // 이미지 - 설명 텍스트 사이
-    indicatorGap: 4     // 설명 텍스트 - 페이지 점(Dot) 사이
+    titleGap: 1,
+    imageToTextGap: 1,
+    indicatorGap: 4
   },
   planning: {
-    titleGap: 6,       // 섹션 제목 - 첫 번째 아이템 사이
-    itemGap: 12,       // 아이템(그룹) 간의 상하 간격
-    imageToTitleGap: 4, // 이미지 - 소제목 사이
-    titleToDescGap: 1   // 소제목 - 설명글 사이
+    titleGap: 6,
+    itemGap: 12,
+    imageToTitleGap: 4,
+    titleToDescGap: 1
   },
   projects: {
-    titleGap: 6,       // 섹션 제목 - 첫 번째 아이템 사이
-    itemGap: 12,       // 아이템(그룹) 간의 상하 간격
-    imageToTitleGap: 4, // 이미지 - 소제목 사이
-    titleToDescGap: 1   // 소제목 - 설명글 사이
+    titleGap: 6,
+    itemGap: 12,
+    imageToTitleGap: 4,
+    titleToDescGap: 1
   },
   tattoo: {
-    titleGap: 6,       // 섹션 제목 - 이미지 그리드 사이
-    itemGap: 4         // 이미지들 사이의 좁은 간격
+    titleGap: 6,
+    itemGap: 4
   },
   contact: {
-    titleGap: 2        // Contact 제목 - 본문 사이
+    titleGap: 2
   }
 };

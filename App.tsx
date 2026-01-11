@@ -1,8 +1,78 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
 import { BRANDING_DATA, PLANNING_DATA, PROJECTS_DATA, TATTOO_DATA, CONTACT_INFO, SPACING_CONFIG } from './constants';
+
+interface PlanningSliderProps {
+  images: string[];
+}
+
+const PlanningSlider: React.FC<PlanningSliderProps> = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  // 화면 노출 감지 로직
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 } // 50% 이상 보일 때 활성화
+    );
+
+    if (sliderRef.current) {
+      observer.observe(sliderRef.current);
+    }
+
+    return () => {
+      if (sliderRef.current) {
+        observer.unobserve(sliderRef.current);
+      }
+    };
+  }, []);
+
+  // 화면에 보일 때만 타이머 작동
+  useEffect(() => {
+    if (!isVisible || images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isVisible, images.length]);
+
+  return (
+    <div ref={sliderRef} className="relative w-full h-full overflow-hidden group">
+      {images.map((img, idx) => (
+        <div
+          key={idx}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            idx === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <img src={img} alt={`Slide ${idx}`} className="w-full h-full object-cover" />
+        </div>
+      ))}
+      
+      {/* 슬라이더 인디케이터 */}
+      {images.length > 1 && (
+        <div className="absolute bottom-3 right-3 flex gap-1.5 z-10">
+          {images.map((_, idx) => (
+            <div
+              key={idx}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                idx === currentIndex ? 'bg-white scale-110' : 'bg-white/40'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const App: React.FC = () => {
   const [brandingIndex, setBrandingIndex] = useState(0);
@@ -116,31 +186,6 @@ const App: React.FC = () => {
         </div>
       </Section>
 
-      {/* Planning Section */}
-      <Section id="planning" title="Planning" className="border-t border-zinc-100">
-        <div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 pointer-events-auto" 
-          style={{ 
-            paddingTop: `${SPACING_CONFIG.planning.titleGap * 0.25}rem`,
-            rowGap: `${SPACING_CONFIG.planning.itemGap * 0.25}rem`
-          }}
-        >
-          {PLANNING_DATA.map((item) => (
-            <div key={item.id}>
-              <div className="aspect-[3/2] overflow-hidden bg-zinc-100 rounded-lg shadow-sm" style={{ marginBottom: `${SPACING_CONFIG.planning.imageToTitleGap * 0.25}rem` }}>
-                <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-medium text-black tracking-tight" style={{ marginBottom: `${SPACING_CONFIG.planning.titleToDescGap * 0.25}rem` }}>
-                {item.title}
-              </h3>
-              <p className="text-sm text-zinc-500 leading-relaxed font-normal">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* Projects Section */}
       <Section id="projects" title="Projects" className="border-t border-zinc-100">
         <div 
@@ -171,6 +216,31 @@ const App: React.FC = () => {
               </div>
             );
           })}
+        </div>
+      </Section>
+
+      {/* Planning Section */}
+      <Section id="planning" title="Planning" className="border-t border-zinc-100">
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 pointer-events-auto" 
+          style={{ 
+            paddingTop: `${SPACING_CONFIG.planning.titleGap * 0.25}rem`,
+            rowGap: `${SPACING_CONFIG.planning.itemGap * 0.25}rem`
+          }}
+        >
+          {PLANNING_DATA.map((item) => (
+            <div key={item.id}>
+              <div className="aspect-[3/2] overflow-hidden bg-zinc-100 rounded-lg shadow-sm" style={{ marginBottom: `${SPACING_CONFIG.planning.imageToTitleGap * 0.25}rem` }}>
+                <PlanningSlider images={item.imageUrls || [item.imageUrl]} />
+              </div>
+              <h3 className="text-lg sm:text-xl font-medium text-black tracking-tight" style={{ marginBottom: `${SPACING_CONFIG.planning.titleToDescGap * 0.25}rem` }}>
+                {item.title}
+              </h3>
+              <p className="text-sm text-zinc-500 leading-relaxed font-normal">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </Section>
 

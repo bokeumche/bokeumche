@@ -5,6 +5,7 @@ export interface PortfolioItem {
   subtitle?: string;
   description: string;
   imageUrl: string;
+  imageUrls?: string[]; // 추가: 여러 이미지 지원
 }
 
 export interface TattooItem {
