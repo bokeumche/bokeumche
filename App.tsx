@@ -116,11 +116,15 @@ const App: React.FC = () => {
       return (
         <span className="text-lg sm:text-xl tracking-tight transition-colors">
           <span className="font-normal text-zinc-700 group-hover:text-black">click! </span>
-          <span className="font-light text-zinc-200 group-hover:text-black">(download)</span>
+          <span className="font-light text-zinc-400 group-hover:text-black">(download)</span>
         </span>
       );
     }
-    return name;
+    return (
+      <span className="text-lg sm:text-xl tracking-tight transition-colors font-normal text-zinc-700 group-hover:text-black">
+        {name}
+      </span>
+    );
   };
 
   const nextBranding = () => {
