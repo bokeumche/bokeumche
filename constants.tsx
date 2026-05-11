@@ -109,7 +109,7 @@ export const CONTACT_INFO = {
   headline: "새로운 연결과 소통을 기다립니다.",
   email: "bokeumche@gmail.com",
   socials: [
-    { name: "click! (download)", url: "https://drive.google.com/file/d/1VfBSFKsQ0-x2FNQMpO4YCOp_RoGo_IWk/view?usp=sharing" }
+    { name: "click! (download)", url: "https://drive.google.com/file/d/10FoRcPyHKD_taBXxA0sZnKdubmZGXy8A/view?usp=sharing" }
   ],
   copyright: "© 2026 채보금. All rights reserved."
 };
